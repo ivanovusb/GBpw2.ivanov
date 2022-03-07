@@ -13,4 +13,20 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="cool_number_button">
+        <item name="android:backgroundTint">@color/black</item>
+        <item name="android:textColor">@color/dark_slate_gray</item>
+        <item name="android:textSize">30sp</item>
+        <item name="fontFamily">@font/pacifico</item>
+    </style>
+
+    <style name="cool_math_signs">
+        <item name="android:backgroundTint">@color/dim_gray</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">30sp</item>
+        <item name="fontFamily">@font/pacifico</item>
+    </style>
+
+
 </resources>
