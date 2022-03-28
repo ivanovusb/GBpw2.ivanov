@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private int intValueTwo;
     private int intResult;
     private String stringResult;
+    private String operation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,6 +158,25 @@ public class MainActivity extends AppCompatActivity {
         buttonPlus.setOnClickListener(view -> {
             intValueOne = Integer.parseInt(String.valueOf(monitor.getText()));
             monitor.setText(null);
+            operation = "+";
+        });
+
+        buttonMinus.setOnClickListener(view -> {
+            intValueOne = Integer.parseInt(String.valueOf(monitor.getText()));
+            monitor.setText(null);
+            operation = "-";
+        });
+
+        buttonDiv.setOnClickListener(view -> {
+            intValueOne = Integer.parseInt(String.valueOf(monitor.getText()));
+            monitor.setText(null);
+            operation = "÷";
+        });
+
+        buttonMulti.setOnClickListener(view -> {
+            intValueOne = Integer.parseInt(String.valueOf(monitor.getText()));
+            monitor.setText(null);
+            operation = "*";
         });
 
         buttonClear.setOnClickListener(view -> {
@@ -169,12 +189,43 @@ public class MainActivity extends AppCompatActivity {
 
 
         buttonEqual.setOnClickListener(view -> {
-            intValueTwo = Integer.parseInt(String.valueOf(monitor.getText()));
-            intResult = intValueOne + intValueTwo;
 
-            stringResult = String.valueOf(intResult);
-            monitor.setText(stringResult);
+            switch (operation) {
+                case "+":
+                    intValueTwo = Integer.parseInt(String.valueOf(monitor.getText()));
+                    intResult = intValueOne + intValueTwo;
+                    stringResult = String.valueOf(intResult);
+                    monitor.setText(stringResult);
+                    break;
 
+                case "-":
+                    intValueTwo = Integer.parseInt(String.valueOf(monitor.getText()));
+                    intResult = intValueOne - intValueTwo;
+                    stringResult = String.valueOf(intResult);
+                    monitor.setText(stringResult);
+                    break;
+
+                case "÷":
+                    intValueTwo = Integer.parseInt(String.valueOf(monitor.getText()));
+                    intResult = intValueOne / intValueTwo;
+                    stringResult = String.valueOf(intResult);
+                    monitor.setText(stringResult);
+                    break;
+
+                case "*":
+                    intValueTwo = Integer.parseInt(String.valueOf(monitor.getText()));
+                    intResult = intValueOne * intValueTwo;
+                    stringResult = String.valueOf(intResult);
+                    monitor.setText(stringResult);
+                    break;
+            }
+
+            intValueOne = 0;
+            intValueTwo = 0;
+            stringValueOne = "";
+            stringValueTwo = "";
         });
+
+
     }
 }
