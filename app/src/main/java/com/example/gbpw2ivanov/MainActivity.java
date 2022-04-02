@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDot = findViewById(R.id.buttonDot);
         buttonClear = findViewById(R.id.buttonClear);
         buttonBack = findViewById(R.id.buttonBack);
-        buttonPercent = findViewById(R.id.percent);
+        buttonPercent = findViewById(R.id.buttonPercent);
         buttonDiv = findViewById(R.id.buttonDiv);
         buttonMulti = findViewById(R.id.buttonMulti);
         buttonMinus = findViewById(R.id.buttonMinus);
