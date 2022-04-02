@@ -11,17 +11,38 @@
         android:id="@+id/monitor"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:alpha="0.4"
         android:background="@color/ghost_white"
         android:fontFamily="@font/pacifico"
         android:gravity="end|bottom"
-        android:textColor="@color/white"
-        android:textSize="48sp"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@id/monitor_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.30"
+        app:layout_constraintHeight_percent="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:text="12345678" />
+
+    <TextView
+        android:id="@+id/monitor_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:alpha="0.4"
+        android:background="@color/ghost_white"
+        android:fontFamily="@font/pacifico"
+        android:gravity="end|bottom"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/monitor"
         tools:text="12345678" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,7 +53,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/monitor">
+        app:layout_constraintTop_toBottomOf="@id/monitor_2">
 
         <Button
             android:id="@+id/buttonClear"
@@ -222,7 +243,7 @@
             android:layout_height="0dp"
             android:text="@string/button_nine"
             android:theme="@style/cool_number_button"
-            app:layout_constraintBottom_toTopOf="@id/buttonComma"
+            app:layout_constraintBottom_toTopOf="@id/buttonDot"
             app:layout_constraintEnd_toStartOf="@id/buttonPlus"
             app:layout_constraintHeight_percent="0.17"
             app:layout_constraintStart_toEndOf="@id/buttonEight"
@@ -249,17 +270,17 @@
             android:text="@string/button_zero"
             android:theme="@style/cool_number_button"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/buttonComma"
+            app:layout_constraintEnd_toStartOf="@id/buttonDot"
             app:layout_constraintHeight_percent="0.17"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/buttonSeven"
             app:layout_constraintWidth_percent="0.445" />
 
         <Button
-            android:id="@+id/buttonComma"
+            android:id="@+id/buttonDot"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="@string/button_comma"
+            android:text="@string/button_dot"
             android:theme="@style/cool_math_signs"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/buttonEqual"
@@ -272,15 +293,15 @@
             android:id="@+id/buttonEqual"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/pacifico"
             android:text="@string/button_equal"
             android:textColor="@color/black"
             android:textSize="30sp"
-            android:fontFamily="@font/pacifico"
-            android:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
-            app:layout_constraintStart_toEndOf="@id/buttonComma"
+            app:layout_constraintStart_toEndOf="@id/buttonDot"
             app:layout_constraintTop_toBottomOf="@id/buttonPlus"
             app:layout_constraintWidth_percent="0.2" />
 
