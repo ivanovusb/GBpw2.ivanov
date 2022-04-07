@@ -1,5 +1,6 @@
 package com.example.gbpw2ivanov;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -11,18 +12,16 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonDot;
-    private Button buttonSeven, buttonEight, buttonNine, buttonZero, buttonClear, buttonBack;
-    private Button buttonPercent, buttonDiv, buttonMulti, buttonMinus, buttonPlus, buttonEqual;
+    private Button buttonClear, buttonBack, buttonDiv, buttonMulti, buttonMinus, buttonPlus, buttonEqual, buttonPercent, buttonDot;
+    private Button[] digits;
     private TextView monitor, monitor_2;
-    private int intValueOne;
-    private int intValueTwo;
-    private double doubleValueOne;
-    private double doubleValueTwo;
-    private int intResult;
-    private double doubleResult;
-    private String operation;
-    private boolean isComma = false;
+    private StringBuilder valueOne, valueTwo, buffer;
+    private String operation = "";
+    private boolean isDot = false;
+    private Calculation calculation;
+    public static final String MONITOR = "monitor";
+    public static final String MONITOR_2 = "monitor_2";
+
 
 
     @Override
@@ -30,273 +29,132 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonOne = findViewById(R.id.buttonOne);
-        buttonTwo = findViewById(R.id.buttonTwo);
-        buttonThree = findViewById(R.id.buttonThree);
-        buttonFour = findViewById(R.id.buttonFour);
-        buttonFive = findViewById(R.id.buttonFive);
-        buttonSix = findViewById(R.id.buttonSix);
-        buttonSeven = findViewById(R.id.buttonSeven);
-        buttonEight = findViewById(R.id.buttonEight);
-        buttonNine = findViewById(R.id.buttonNine);
-        buttonZero = findViewById(R.id.buttonZero);
-        buttonDot = findViewById(R.id.buttonDot);
-        buttonClear = findViewById(R.id.buttonClear);
-        buttonBack = findViewById(R.id.buttonBack);
-        buttonPercent = findViewById(R.id.buttonPercent);
-        buttonDiv = findViewById(R.id.buttonDiv);
-        buttonMulti = findViewById(R.id.buttonMulti);
-        buttonMinus = findViewById(R.id.buttonMinus);
-        buttonPlus = findViewById(R.id.buttonPlus);
-        buttonEqual = findViewById(R.id.buttonEqual);
-        monitor = findViewById(R.id.monitor);
-        monitor_2 = findViewById(R.id.monitor_2);
+        initialize();
+        signsType();
+        digitsType();
 
+        if (savedInstanceState!=null) {
+            monitor.setText(savedInstanceState.getString(MONITOR));
+            monitor_2.setText(savedInstanceState.getString(MONITOR_2));
+        }
+    }
 
-        buttonOne.setOnClickListener(view -> {
-            if (operation == "=") {
-                monitor_2.setText(null);
-                monitor.setText(null);
-                operation = "";
-            }
-            monitor_2.append(buttonOne.getText());
-        });
+    private void digitsType() {
+        for (int i = 0; i < digits.length; i++) {
+            int lastI = i;
+            digits[i].setOnClickListener(view -> {
+                buffer.append(digits[lastI].getText().toString());
+                monitor_2.append(digits[lastI].getText().toString());
+            });
+        }
+    }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(MONITOR, String.valueOf(monitor.getText()));
+        outState.putString(MONITOR_2, String.valueOf(monitor_2.getText()));
+    }
 
-        buttonTwo.setOnClickListener(view -> {
-            if (operation == "=") {
-                monitor_2.setText(null);
-                monitor.setText(null);
-                operation = "";
-            }
-            monitor_2.append(buttonTwo.getText());
-        });
+    private void signsType() {
 
-        buttonThree.setOnClickListener(view -> {
-            if (operation == "=") {
-                monitor_2.setText(null);
-                monitor.setText(null);
-                operation = "";
-            }
-            monitor_2.append(buttonThree.getText());
-        });
-
-        buttonFour.setOnClickListener(view -> {
-            if (operation == "=") {
-                monitor_2.setText(null);
-                monitor.setText(null);
-                operation = "";
-            }
-            monitor_2.append(buttonFour.getText());
-        });
-
-        buttonFive.setOnClickListener(view -> {
-            if (operation == "=") {
-                monitor_2.setText(null);
-                monitor.setText(null);
-                operation = "";
-            }
-            monitor_2.append(buttonFive.getText());
-        });
-
-        buttonSix.setOnClickListener(view -> {
-            if (operation == "=") {
-                monitor_2.setText(null);
-                monitor.setText(null);
-                operation = "";
-            }
-            monitor_2.append(buttonSix.getText());
-        });
-
-        buttonSeven.setOnClickListener(view -> {
-            if (operation == "=") {
-                monitor_2.setText(null);
-                monitor.setText(null);
-                operation = "";
-            }
-            monitor_2.append(buttonSeven.getText());
-        });
-
-        buttonEight.setOnClickListener(view -> {
-            if (operation == "=") {
-                monitor_2.setText(null);
-                monitor.setText(null);
-                operation = "";
-            }
-            monitor_2.append(buttonEight.getText());
-        });
-
-        buttonNine.setOnClickListener(view -> {
-            if (operation == "=") {
-                monitor_2.setText(null);
-                monitor.setText(null);
-                operation = "";
-            }
-            monitor_2.append(buttonNine.getText());
-        });
-
-        buttonZero.setOnClickListener(view -> {
-            if (operation == "=") {
-                monitor_2.setText(null);
-                monitor.setText(null);
-                operation = "";
-            }
-            monitor_2.append(buttonZero.getText());
-        });
-
-        buttonPlus.setOnClickListener(view -> {
-//            if (isComma) {
-//                monitor.append(monitor_2.getText() + "+");
-//                doubleValueOne = Double.parseDouble(String.valueOf(monitor_2.getText()));
-//                monitor_2.setText(null);
-//                operation = "+";
-//            } else {
-                monitor.append(monitor_2.getText() + "+");
-                intValueOne = Integer.parseInt(String.valueOf(monitor_2.getText()));
-                monitor_2.setText(null);
-                operation = "+";
-//            }
-        });
-
-        buttonMinus.setOnClickListener(view -> {
-//            if (isComma) {
-//                monitor.append(monitor_2.getText() + "-");
-//                doubleValueOne = Double.parseDouble(String.valueOf(monitor_2.getText()));
-//                monitor_2.setText(null);
-//                operation = "-";
-//            } else {
-                monitor.append(monitor_2.getText() + "-");
-                intValueOne = Integer.parseInt(String.valueOf(monitor_2.getText()));
-                monitor_2.setText(null);
-                operation = "-";
-//            }
-        });
-
-        buttonDiv.setOnClickListener(view -> {
-//            if (isComma) {
-//                monitor.append(monitor_2.getText() + "÷");
-//                doubleValueOne = Double.parseDouble(String.valueOf(monitor_2.getText()));
-//                monitor_2.setText(null);
-//                operation = "÷";
-//            } else {
-                monitor.append(monitor_2.getText() + "÷");
-                intValueOne = Integer.parseInt(String.valueOf(monitor_2.getText()));
-                monitor_2.setText(null);
-                operation = "÷";
-//            }
-        });
-
-        buttonMulti.setOnClickListener(view -> {
-//            if (isComma) {
-//                monitor.append(monitor_2.getText() + "*");
-//                doubleValueOne = Double.parseDouble(String.valueOf(monitor_2.getText()));
-//                monitor_2.setText(null);
-//                operation = "*";
-//            } else {
-                monitor.append(monitor_2.getText() + "*");
-                intValueOne = Integer.parseInt(String.valueOf(monitor_2.getText()));
-                monitor_2.setText(null);
-                operation = "*";
-//            }
-        });
 
         buttonClear.setOnClickListener(view -> {
-            monitor_2.setText(null);
             monitor.setText(null);
-            intValueOne = 0;
-            intValueTwo = 0;
+            monitor_2.setText(null);
+            valueOne.delete(0, valueOne.length());
+            valueTwo.delete(0, valueTwo.length());
+            buffer.delete(0, buffer.length());
         });
 
         buttonBack.setOnClickListener(view -> {
-            StringBuilder st = new StringBuilder(monitor_2.getText());
-            st.deleteCharAt(st.length() - 1);
-            monitor_2.setText(st.toString());
+            valueOne.deleteCharAt(valueOne.length() - 1);
+            monitor_2.setText(valueOne);
+        });
+
+//        buttonPercent.setOnClickListener(view -> {
+//
+//        });
+
+        buttonDiv.setOnClickListener(view -> {
+            valueOne.append(buffer);
+            monitor.append(valueOne + "÷");
+            buffer.delete(0, buffer.length());
+            monitor_2.setText(null);
+            operation = "÷";
+        });
+
+        buttonMulti.setOnClickListener(view -> {
+            valueOne.append(buffer);
+            monitor.append(valueOne + "*");
+            buffer.delete(0, buffer.length());
+            monitor_2.setText(null);
+            operation = "*";
+        });
+
+        buttonMinus.setOnClickListener(view -> {
+            valueOne.append(buffer);
+            monitor.append(valueOne + "-");
+            buffer.delete(0, buffer.length());
+            monitor_2.setText(null);
+            operation = "-";
+        });
+
+        buttonPlus.setOnClickListener(view -> {
+            valueOne.append(buffer);
+            monitor.append(valueOne + "+");
+            buffer.delete(0, buffer.length());
+            monitor_2.setText(null);
+            operation = "+";
+        });
+
+        buttonEqual.setOnClickListener(view -> {
+            valueTwo.append(monitor_2.getText());
+            calculation = new Calculation(valueOne, valueTwo, operation, isDot);
+            monitor.append(valueTwo + "=");
+            if (!isDot) {
+                monitor_2.setText(String.valueOf(calculation.intResult));
+            }
+            if (isDot) {
+                monitor_2.setText(String.valueOf(calculation.doubleResult));
+            }
         });
 
         buttonDot.setOnClickListener(view -> {
-            if (operation == "=") {
-                monitor_2.setText(null);
-                monitor.setText(null);
-                operation = "";
-            }
+            isDot = true;
+            buffer.append(buttonDot.getText());
             monitor_2.append(buttonDot.getText());
-            isComma = true;
         });
-
-
-        buttonEqual.setOnClickListener(view -> {
-//            if (isComma) {
-//                switch (operation) {
-//                    case "+":
-//                        doubleValueTwo = Double.parseDouble(String.valueOf(monitor_2.getText()));
-//                        doubleResult = doubleValueOne + doubleValueTwo;
-//                        monitor_2.setText(String.valueOf(doubleResult));
-//                        monitor.setText(monitor.getText() + String.valueOf(doubleValueTwo) + "=");
-//                        break;
-//
-//                    case "-":
-//                        doubleValueTwo = Double.parseDouble(String.valueOf(monitor_2.getText()));
-//                        doubleResult = doubleValueOne - doubleValueTwo;
-//                        monitor_2.setText(String.valueOf(doubleResult));
-//                        monitor.setText(monitor.getText() + String.valueOf(doubleValueTwo) + "=");
-//                        break;
-//
-//                    case "÷":
-//                        doubleValueTwo = Double.parseDouble(String.valueOf(monitor_2.getText()));
-//                        doubleResult = doubleValueOne / doubleValueTwo;
-//                        monitor_2.setText(String.valueOf(doubleResult));
-//                        monitor.setText(monitor.getText() + String.valueOf(doubleValueTwo) + "=");
-//
-//                    case "*":
-//                        doubleValueTwo = Double.parseDouble(String.valueOf(monitor_2.getText()));
-//                        doubleResult = doubleValueOne * doubleValueTwo;
-//                        monitor_2.setText(String.valueOf(doubleResult));
-//                        monitor.setText(monitor.getText() + String.valueOf(doubleValueTwo) + "=");
-//                }
-//
-//            } else {
-                switch (operation) {
-                    case "+":
-                        intValueTwo = Integer.parseInt(String.valueOf(monitor_2.getText()));
-                        intResult = intValueOne + intValueTwo;
-                        monitor_2.setText(String.valueOf(intResult));
-                        monitor.setText(monitor.getText() + String.valueOf(intValueTwo) + "=");
-                        break;
-
-                    case "-":
-                        intValueTwo = Integer.parseInt(String.valueOf(monitor_2.getText()));
-                        intResult = intValueOne - intValueTwo;
-                        monitor_2.setText(String.valueOf(intResult));
-                        monitor.setText(monitor.getText() + String.valueOf(intValueTwo) + "=");
-                        break;
-
-                    case "÷":
-                        intValueTwo = Integer.parseInt(String.valueOf(monitor_2.getText()));
-                        intResult = intValueOne / intValueTwo;
-                        monitor_2.setText(String.valueOf(intResult));
-                        monitor.setText(monitor.getText() + String.valueOf(intValueTwo) + "=");
-                        break;
-
-                    case "*":
-                        intValueTwo = Integer.parseInt(String.valueOf(monitor_2.getText()));
-                        intResult = intValueOne * intValueTwo;
-                        monitor_2.setText(String.valueOf(intResult));
-                        monitor.setText(monitor.getText() + String.valueOf(intValueTwo) + "=");
-                        break;
-                }
-//            }
-
-            operation = "=";
-            isComma = false;
-
-            intValueOne = 0;
-            intValueTwo = 0;
-            doubleValueOne = 0;
-            doubleValueTwo = 0;
-        });
-
-
-
     }
 
+    public void initialize() {
+        digits = new Button[10];
+        valueOne = new StringBuilder();
+        valueTwo = new StringBuilder();
+        buffer = new StringBuilder();
+
+        digits[0] = findViewById(R.id.button_zero);
+        digits[1] = findViewById(R.id.button_one);
+        digits[2] = findViewById(R.id.button_two);
+        digits[3] = findViewById(R.id.button_three);
+        digits[4] = findViewById(R.id.button_four);
+        digits[5] = findViewById(R.id.button_five);
+        digits[6] = findViewById(R.id.button_six);
+        digits[7] = findViewById(R.id.button_seven);
+        digits[8] = findViewById(R.id.button_eight);
+        digits[9] = findViewById(R.id.button_nine);
+
+        buttonDot = findViewById(R.id.button_dot);
+        buttonClear = findViewById(R.id.button_clear);
+        buttonBack = findViewById(R.id.button_back);
+        buttonPercent = findViewById(R.id.percent);
+        buttonDiv = findViewById(R.id.button_div);
+        buttonMulti = findViewById(R.id.button_multi);
+        buttonMinus = findViewById(R.id.button_minus);
+        buttonPlus = findViewById(R.id.button_plus);
+        buttonEqual = findViewById(R.id.button_equal);
+        monitor = findViewById(R.id.monitor);
+        monitor_2 = findViewById(R.id.monitor_2);
+
+    }
 }
