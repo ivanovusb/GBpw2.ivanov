@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="cool_number_button_size" type="dimen">30sp</item>
+    <item name="cool_number_button_size_land" type="dimen">15sp</item>
+    <item name="cool_math_signs_size_land" type="dimen">20sp</item>
+    <item name="corner_radius_for_buttons" type="dimen">60dp</item>
+</resources>

@@ -12,9 +12,17 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonClear, buttonBack, buttonDiv, buttonMulti, buttonMinus, buttonPlus, buttonEqual, buttonPercent, buttonDot;
+    private Button buttonClear;
+    private Button buttonBack;
+    private Button buttonDiv;
+    private Button buttonMulti;
+    private Button buttonMinus;
+    private Button buttonPlus;
+    private Button buttonEqual;
+    private Button buttonPercent;
+    private Button buttonDot;
     private Button[] digits;
-    private TextView monitor, monitor_2;
+    private TextView monitor, monitor2;
     private StringBuilder valueOne, valueTwo, buffer;
     private String operation = "";
     private boolean isDot = false;
@@ -35,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState!=null) {
             monitor.setText(savedInstanceState.getString(MONITOR));
-            monitor_2.setText(savedInstanceState.getString(MONITOR_2));
+            monitor2.setText(savedInstanceState.getString(MONITOR_2));
         }
     }
 
@@ -44,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             int lastI = i;
             digits[i].setOnClickListener(view -> {
                 buffer.append(digits[lastI].getText().toString());
-                monitor_2.append(digits[lastI].getText().toString());
+                monitor2.append(digits[lastI].getText().toString());
             });
         }
     }
@@ -53,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(MONITOR, String.valueOf(monitor.getText()));
-        outState.putString(MONITOR_2, String.valueOf(monitor_2.getText()));
+        outState.putString(MONITOR_2, String.valueOf(monitor2.getText()));
     }
 
     private void signsType() {
@@ -61,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonClear.setOnClickListener(view -> {
             monitor.setText(null);
-            monitor_2.setText(null);
+            monitor2.setText(null);
             valueOne.delete(0, valueOne.length());
             valueTwo.delete(0, valueTwo.length());
             buffer.delete(0, buffer.length());
@@ -69,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonBack.setOnClickListener(view -> {
             valueOne.deleteCharAt(valueOne.length() - 1);
-            monitor_2.setText(valueOne);
+            monitor2.setText(valueOne);
         });
 
 //        buttonPercent.setOnClickListener(view -> {
@@ -80,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             valueOne.append(buffer);
             monitor.append(valueOne + "÷");
             buffer.delete(0, buffer.length());
-            monitor_2.setText(null);
+            monitor2.setText(null);
             operation = "÷";
         });
 
@@ -88,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             valueOne.append(buffer);
             monitor.append(valueOne + "*");
             buffer.delete(0, buffer.length());
-            monitor_2.setText(null);
+            monitor2.setText(null);
             operation = "*";
         });
 
@@ -96,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             valueOne.append(buffer);
             monitor.append(valueOne + "-");
             buffer.delete(0, buffer.length());
-            monitor_2.setText(null);
+            monitor2.setText(null);
             operation = "-";
         });
 
@@ -104,26 +112,26 @@ public class MainActivity extends AppCompatActivity {
             valueOne.append(buffer);
             monitor.append(valueOne + "+");
             buffer.delete(0, buffer.length());
-            monitor_2.setText(null);
+            monitor2.setText(null);
             operation = "+";
         });
 
         buttonEqual.setOnClickListener(view -> {
-            valueTwo.append(monitor_2.getText());
+            valueTwo.append(monitor2.getText());
             calculation = new Calculation(valueOne, valueTwo, operation, isDot);
             monitor.append(valueTwo + "=");
             if (!isDot) {
-                monitor_2.setText(String.valueOf(calculation.intResult));
+                monitor2.setText(String.valueOf(calculation.getIntResult()));
             }
             if (isDot) {
-                monitor_2.setText(String.valueOf(calculation.doubleResult));
+                monitor2.setText(String.valueOf(calculation.getDoubleResult()));
             }
         });
 
         buttonDot.setOnClickListener(view -> {
             isDot = true;
             buffer.append(buttonDot.getText());
-            monitor_2.append(buttonDot.getText());
+            monitor2.append(buttonDot.getText());
         });
     }
 
@@ -154,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         buttonPlus = findViewById(R.id.button_plus);
         buttonEqual = findViewById(R.id.button_equal);
         monitor = findViewById(R.id.monitor);
-        monitor_2 = findViewById(R.id.monitor_2);
+        monitor2 = findViewById(R.id.monitor_2);
 
     }
 }

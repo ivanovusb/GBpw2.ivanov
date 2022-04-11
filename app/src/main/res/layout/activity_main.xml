@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/texture"
+    android:background="@drawable/texture_light"
     tools:context=".MainActivity">
 
     <TextView
@@ -15,7 +16,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:alpha="0.4"
-        android:background="@color/ghost_white"
+        android:background="@color/monitor"
         android:fontFamily="@font/pacifico"
         android:gravity="end|bottom"
         android:textColor="@color/black"
@@ -34,7 +35,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:alpha="0.4"
-        android:background="@color/ghost_white"
+        android:background="@color/monitor"
         android:fontFamily="@font/pacifico"
         android:gravity="end|bottom"
         android:textColor="@color/black"
@@ -55,12 +56,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/monitor_2">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_clear"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_clear"
-            android:theme="@style/cool_math_signs"
+            style="@style/coolMathSigns"
             app:layout_constraintBottom_toTopOf="@id/button_one"
             app:layout_constraintEnd_toStartOf="@id/button_back"
             app:layout_constraintHeight_percent="0.17"
@@ -68,12 +69,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_back"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_back"
-            android:theme="@style/cool_math_signs"
+            style="@style/coolMathSigns"
             app:layout_constraintBottom_toTopOf="@id/button_two"
             app:layout_constraintEnd_toStartOf="@id/button_percent"
             app:layout_constraintHeight_percent="0.17"
@@ -81,12 +82,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_percent"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_percent"
-            android:theme="@style/cool_math_signs"
+            style="@style/coolMathSigns"
             app:layout_constraintBottom_toTopOf="@id/button_three"
             app:layout_constraintEnd_toStartOf="@id/button_div"
             app:layout_constraintHeight_percent="0.17"
@@ -94,12 +95,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_div"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_div"
-            android:theme="@style/cool_math_signs"
+            style="@style/coolMathSigns"
             app:layout_constraintBottom_toTopOf="@id/button_multi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
@@ -107,12 +108,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_one"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_one"
-            android:theme="@style/cool_number_button"
+            style="@style/coolNumberButton"
             app:layout_constraintBottom_toTopOf="@id/button_four"
             app:layout_constraintEnd_toStartOf="@id/button_two"
             app:layout_constraintHeight_percent="0.17"
@@ -120,12 +121,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_clear"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_two"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_two"
-            android:theme="@style/cool_number_button"
+            style="@style/coolNumberButton"
             app:layout_constraintBottom_toTopOf="@id/button_five"
             app:layout_constraintEnd_toStartOf="@id/button_three"
             app:layout_constraintHeight_percent="0.17"
@@ -133,12 +134,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_back"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_three"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_3"
-            android:theme="@style/cool_number_button"
+            style="@style/coolNumberButton"
             app:layout_constraintBottom_toTopOf="@id/button_six"
             app:layout_constraintEnd_toStartOf="@id/button_multi"
             app:layout_constraintHeight_percent="0.17"
@@ -146,12 +147,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_percent"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_multi"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_multi"
-            android:theme="@style/cool_math_signs"
+            style="@style/coolMathSigns"
             app:layout_constraintBottom_toTopOf="@id/button_minus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
@@ -159,12 +160,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_div"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_four"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_four"
-            android:theme="@style/cool_number_button"
+            style="@style/coolNumberButton"
             app:layout_constraintBottom_toTopOf="@id/button_seven"
             app:layout_constraintEnd_toStartOf="@id/button_five"
             app:layout_constraintHeight_percent="0.17"
@@ -172,12 +173,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_one"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_five"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_five"
-            android:theme="@style/cool_number_button"
+            style="@style/coolNumberButton"
             app:layout_constraintBottom_toTopOf="@id/button_eight"
             app:layout_constraintEnd_toStartOf="@id/button_six"
             app:layout_constraintHeight_percent="0.17"
@@ -185,12 +186,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_two"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_six"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_six"
-            android:theme="@style/cool_number_button"
+            style="@style/coolNumberButton"
             app:layout_constraintBottom_toTopOf="@id/button_nine"
             app:layout_constraintEnd_toStartOf="@id/button_multi"
             app:layout_constraintHeight_percent="0.17"
@@ -198,12 +199,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_three"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_minus"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_minus"
-            android:theme="@style/cool_math_signs"
+            style="@style/coolMathSigns"
             app:layout_constraintBottom_toTopOf="@id/button_plus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
@@ -211,12 +212,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_multi"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_seven"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_seven"
-            android:theme="@style/cool_number_button"
+            style="@style/coolNumberButton"
             app:layout_constraintBottom_toTopOf="@id/button_zero"
             app:layout_constraintEnd_toStartOf="@id/button_eight"
             app:layout_constraintHeight_percent="0.17"
@@ -224,12 +225,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_four"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_eight"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_eight"
-            android:theme="@style/cool_number_button"
+            style="@style/coolNumberButton"
             app:layout_constraintBottom_toTopOf="@id/button_zero"
             app:layout_constraintEnd_toStartOf="@id/button_nine"
             app:layout_constraintHeight_percent="0.17"
@@ -237,12 +238,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_five"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_nine"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_nine"
-            android:theme="@style/cool_number_button"
+            style="@style/coolNumberButton"
             app:layout_constraintBottom_toTopOf="@id/button_dot"
             app:layout_constraintEnd_toStartOf="@id/button_plus"
             app:layout_constraintHeight_percent="0.17"
@@ -250,12 +251,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_six"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_plus"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_plus"
-            android:theme="@style/cool_math_signs"
+            style="@style/coolMathSigns"
             app:layout_constraintBottom_toTopOf="@id/button_equal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
@@ -263,12 +264,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_minus"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_zero"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_zero"
-            android:theme="@style/cool_number_button"
+            style="@style/coolNumberButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/button_dot"
             app:layout_constraintHeight_percent="0.17"
@@ -276,12 +277,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_seven"
             app:layout_constraintWidth_percent="0.445" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_dot"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_dot"
-            android:theme="@style/cool_math_signs"
+            style="@style/coolMathSigns"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/button_equal"
             app:layout_constraintHeight_percent="0.17"
@@ -289,21 +290,18 @@
             app:layout_constraintTop_toBottomOf="@id/button_nine"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_equal"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/pacifico"
             android:text="@string/button_equal"
-            android:textColor="@color/black"
-            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
             app:layout_constraintStart_toEndOf="@id/button_dot"
             app:layout_constraintTop_toBottomOf="@id/button_plus"
-            app:layout_constraintWidth_percent="0.2" />
+            app:layout_constraintWidth_percent="0.2"
+            style="@style/buttonEqual"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
