@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light Theme -->
+    <style name="CalcButtonLightTheme">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="cornerRadius">@dimen/corner_radius_for_buttons</item>
+    </style>
+
+    <style name="CalcButtonLightTheme.CoolNumberButton">
+        <item name="android:backgroundTint">@color/number_button_background</item>
+        <item name="android:textSize">@dimen/cool_number_button_size</item>
+        <item name="fontFamily">@font/pacifico</item>
+    </style>
+
+    <style name="CalcButtonLightTheme.CoolMathSigns">
+        <item name="android:backgroundTint">@color/signs_button_background</item>
+        <item name="android:textSize">@dimen/cool_number_button_size</item>
+        <item name="fontFamily">@font/roboto_signs</item>
+    </style>
+
+    <style name="CalcButtonLightTheme.CoolNumberButtonLand">
+        <item name="android:backgroundTint">@color/number_button_background</item>
+        <item name="android:textSize">@dimen/cool_number_button_size_land</item>
+        <item name="fontFamily">@font/pacifico</item>
+    </style>
+
+    <style name="CalcButtonLightTheme.CoolMathSignsLand">
+        <item name="android:backgroundTint">@color/signs_button_background</item>
+        <item name="android:textSize">@dimen/cool_math_signs_size_land</item>
+        <item name="fontFamily">@font/roboto_signs</item>
+    </style>
+
+    <style name="CalcButtonLightTheme.ButtonEqual">
+        <item name="android:backgroundTint">@color/equal_button_background</item>
+        <item name="android:textSize">@dimen/cool_math_signs_size_land</item>
+        <item name="fontFamily">@font/pacifico</item>
+    </style>
+
+    <style name="monitorLight">
+        <item name="android:alpha">0.4</item>
+        <item name="android:background">@color/monitor</item>
+        <item name="android:fontFamily">@font/pacifico</item>
+        <item name="android:gravity">end|bottom</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/monitor_text_size</item>
+    </style>
+
+    <!-- Dark Theme -->
+
+    <style name="CalcButtonDarkTheme" parent="CalcButtonLightTheme">
+        <item name="android:textColor">@color/text_color_for_dark_theme</item>
+        <item name="android:gravity">center</item>
+        <item name="cornerRadius">@dimen/corner_radius_for_buttons</item>
+    </style>
+
+    <style name="CalcButtonDarkTheme.CoolNumberButton">
+        <item name="android:backgroundTint">@color/number_button_background_dark</item>
+        <item name="android:textSize">@dimen/cool_number_button_size</item>
+        <item name="fontFamily">@font/pacifico</item>
+    </style>
+
+    <style name="CalcButtonDarkTheme.CoolMathSigns">
+        <item name="android:backgroundTint">@color/signs_button_background_dark</item>
+        <item name="android:textSize">@dimen/cool_number_button_size</item>
+        <item name="fontFamily">@font/roboto_signs</item>
+    </style>
+
+    <style name="CalcButtonDarkTheme.CoolNumberButtonLand">
+        <item name="android:backgroundTint">@color/number_button_background_dark</item>
+        <item name="android:textSize">@dimen/cool_number_button_size_land</item>
+        <item name="fontFamily">@font/pacifico</item>
+    </style>
+
+    <style name="CalcButtonDarkTheme.CoolMathSignsLand">
+        <item name="android:backgroundTint">@color/signs_button_background_dark</item>
+        <item name="android:textSize">@dimen/cool_math_signs_size_land</item>
+        <item name="fontFamily">@font/roboto_signs</item>
+    </style>
+
+    <style name="CalcButtonDarkTheme.ButtonEqual">
+        <item name="android:backgroundTint">@color/equal_button_background_dark</item>
+        <item name="android:textSize">@dimen/cool_math_signs_size_land</item>
+        <item name="fontFamily">@font/pacifico</item>
+    </style>
+
+    <style name="monitorDark">
+        <item name="android:alpha">0.4</item>
+        <item name="android:background">@color/monitor_dark</item>
+        <item name="android:fontFamily">@font/pacifico</item>
+        <item name="android:gravity">end|bottom</item>
+        <item name="android:textColor">@color/text_color_for_dark_theme</item>
+        <item name="android:textSize">@dimen/monitor_text_size</item>
+    </style>
+
+
+</resources>

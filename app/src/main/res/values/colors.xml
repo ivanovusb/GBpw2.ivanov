@@ -13,4 +13,12 @@
     <color name="dim_gray">#696969</color>
     <color name="number_button_background">#EBD8C3</color>
     <color name="equal_button_background">#F7E9D7</color>
+
+    <color name="text_color_for_dark_theme">#DBD8E3</color>
+    <color name="number_button_background_dark">#2A2438</color>
+    <color name="signs_button_background_dark">#352F44</color>
+    <color name="equal_button_background_dark">#5C5470</color>
+    <color name="monitor_dark">#5C5470</color>
+
+
 </resources>
