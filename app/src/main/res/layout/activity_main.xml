@@ -9,12 +9,12 @@
 
     <TextView
         android:id="@+id/monitor"
+        style="@style/monitorLight"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        style="@style/monitorLight"
         app:layout_constraintBottom_toTopOf="@id/monitor_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.15"
@@ -24,11 +24,11 @@
 
     <TextView
         android:id="@+id/monitor_2"
+        style="@style/monitorLight"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        style="@style/monitorLight"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.15"

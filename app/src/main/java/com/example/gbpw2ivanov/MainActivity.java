@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String MONITOR_2 = "monitor_2";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         signsType();
         digitsType();
 
-        if (savedInstanceState!=null) {
+        if (savedInstanceState != null) {
             monitor.setText(savedInstanceState.getString(MONITOR));
             monitor2.setText(savedInstanceState.getString(MONITOR_2));
         }

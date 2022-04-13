@@ -10,7 +10,8 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/number_button_background</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/number_button_background
+        </item>
         <!-- Customize your theme here. -->
 
         <item name="materialButtonStyle">@style/CalcButtonLightTheme</item>
@@ -21,8 +22,8 @@
         <item name="materialButtonStyle">@style/CalcButtonDarkTheme</item>
     </style>
 
-<!--
+    <!--
 
--->
+    -->
 </resources>
 
