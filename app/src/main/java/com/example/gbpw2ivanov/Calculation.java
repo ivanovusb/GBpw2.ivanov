@@ -2,8 +2,16 @@ package com.example.gbpw2ivanov;
 
 public class Calculation {
 
-    public int intResult;
-    public double doubleResult;
+    private int intResult;
+    private double doubleResult;
+
+    public int getIntResult() {
+        return intResult;
+    }
+
+    public double getDoubleResult() {
+        return doubleResult;
+    }
 
     public Calculation(StringBuilder valOne, StringBuilder valTwo, String operation, boolean isDot) {
 

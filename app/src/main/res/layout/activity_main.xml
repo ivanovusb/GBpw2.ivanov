@@ -4,22 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/texture"
+    android:background="@drawable/texture_light"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/monitor"
+        style="@style/monitorLight"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:alpha="0.4"
-        android:background="@color/ghost_white"
-        android:fontFamily="@font/pacifico"
-        android:gravity="end|bottom"
-        android:textColor="@color/black"
-        android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@id/monitor_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.15"
@@ -29,15 +24,11 @@
 
     <TextView
         android:id="@+id/monitor_2"
+        style="@style/monitorLight"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:alpha="0.4"
-        android:background="@color/ghost_white"
-        android:fontFamily="@font/pacifico"
-        android:gravity="end|bottom"
-        android:textColor="@color/black"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.15"
@@ -55,12 +46,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/monitor_2">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_clear"
+            style="@style/CalcButtonLightTheme.CoolMathSigns"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_clear"
-            android:theme="@style/cool_math_signs"
             app:layout_constraintBottom_toTopOf="@id/button_one"
             app:layout_constraintEnd_toStartOf="@id/button_back"
             app:layout_constraintHeight_percent="0.17"
@@ -68,12 +59,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_back"
+            style="@style/CalcButtonLightTheme.CoolMathSigns"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_back"
-            android:theme="@style/cool_math_signs"
             app:layout_constraintBottom_toTopOf="@id/button_two"
             app:layout_constraintEnd_toStartOf="@id/button_percent"
             app:layout_constraintHeight_percent="0.17"
@@ -81,12 +72,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_percent"
+            style="@style/CalcButtonLightTheme.CoolMathSigns"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_percent"
-            android:theme="@style/cool_math_signs"
             app:layout_constraintBottom_toTopOf="@id/button_three"
             app:layout_constraintEnd_toStartOf="@id/button_div"
             app:layout_constraintHeight_percent="0.17"
@@ -94,12 +85,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_div"
+            style="@style/CalcButtonLightTheme.CoolMathSigns"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_div"
-            android:theme="@style/cool_math_signs"
             app:layout_constraintBottom_toTopOf="@id/button_multi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
@@ -107,12 +98,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_one"
+            style="@style/CalcButtonLightTheme.CoolNumberButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_one"
-            android:theme="@style/cool_number_button"
             app:layout_constraintBottom_toTopOf="@id/button_four"
             app:layout_constraintEnd_toStartOf="@id/button_two"
             app:layout_constraintHeight_percent="0.17"
@@ -120,12 +111,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_clear"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_two"
+            style="@style/CalcButtonLightTheme.CoolNumberButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_two"
-            android:theme="@style/cool_number_button"
             app:layout_constraintBottom_toTopOf="@id/button_five"
             app:layout_constraintEnd_toStartOf="@id/button_three"
             app:layout_constraintHeight_percent="0.17"
@@ -133,12 +124,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_back"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_three"
+            style="@style/CalcButtonLightTheme.CoolNumberButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_3"
-            android:theme="@style/cool_number_button"
             app:layout_constraintBottom_toTopOf="@id/button_six"
             app:layout_constraintEnd_toStartOf="@id/button_multi"
             app:layout_constraintHeight_percent="0.17"
@@ -146,12 +137,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_percent"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_multi"
+            style="@style/CalcButtonLightTheme.CoolMathSigns"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_multi"
-            android:theme="@style/cool_math_signs"
             app:layout_constraintBottom_toTopOf="@id/button_minus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
@@ -159,12 +150,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_div"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_four"
+            style="@style/CalcButtonLightTheme.CoolNumberButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_four"
-            android:theme="@style/cool_number_button"
             app:layout_constraintBottom_toTopOf="@id/button_seven"
             app:layout_constraintEnd_toStartOf="@id/button_five"
             app:layout_constraintHeight_percent="0.17"
@@ -172,12 +163,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_one"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_five"
+            style="@style/CalcButtonLightTheme.CoolNumberButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_five"
-            android:theme="@style/cool_number_button"
             app:layout_constraintBottom_toTopOf="@id/button_eight"
             app:layout_constraintEnd_toStartOf="@id/button_six"
             app:layout_constraintHeight_percent="0.17"
@@ -185,12 +176,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_two"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_six"
+            style="@style/CalcButtonLightTheme.CoolNumberButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_six"
-            android:theme="@style/cool_number_button"
             app:layout_constraintBottom_toTopOf="@id/button_nine"
             app:layout_constraintEnd_toStartOf="@id/button_multi"
             app:layout_constraintHeight_percent="0.17"
@@ -198,12 +189,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_three"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_minus"
+            style="@style/CalcButtonLightTheme.CoolMathSigns"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_minus"
-            android:theme="@style/cool_math_signs"
             app:layout_constraintBottom_toTopOf="@id/button_plus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
@@ -211,12 +202,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_multi"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_seven"
+            style="@style/CalcButtonLightTheme.CoolNumberButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_seven"
-            android:theme="@style/cool_number_button"
             app:layout_constraintBottom_toTopOf="@id/button_zero"
             app:layout_constraintEnd_toStartOf="@id/button_eight"
             app:layout_constraintHeight_percent="0.17"
@@ -224,12 +215,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_four"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_eight"
+            style="@style/CalcButtonLightTheme.CoolNumberButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_eight"
-            android:theme="@style/cool_number_button"
             app:layout_constraintBottom_toTopOf="@id/button_zero"
             app:layout_constraintEnd_toStartOf="@id/button_nine"
             app:layout_constraintHeight_percent="0.17"
@@ -237,12 +228,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_five"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_nine"
+            style="@style/CalcButtonLightTheme.CoolNumberButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_nine"
-            android:theme="@style/cool_number_button"
             app:layout_constraintBottom_toTopOf="@id/button_dot"
             app:layout_constraintEnd_toStartOf="@id/button_plus"
             app:layout_constraintHeight_percent="0.17"
@@ -250,12 +241,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_six"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_plus"
+            style="@style/CalcButtonLightTheme.CoolMathSigns"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_plus"
-            android:theme="@style/cool_math_signs"
             app:layout_constraintBottom_toTopOf="@id/button_equal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
@@ -263,12 +254,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_minus"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_zero"
+            style="@style/CalcButtonLightTheme.CoolNumberButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_zero"
-            android:theme="@style/cool_number_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/button_dot"
             app:layout_constraintHeight_percent="0.17"
@@ -276,12 +267,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_seven"
             app:layout_constraintWidth_percent="0.445" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_dot"
+            style="@style/CalcButtonLightTheme.CoolMathSigns"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/button_dot"
-            android:theme="@style/cool_math_signs"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/button_equal"
             app:layout_constraintHeight_percent="0.17"
@@ -289,15 +280,12 @@
             app:layout_constraintTop_toBottomOf="@id/button_nine"
             app:layout_constraintWidth_percent="0.2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_equal"
+            style="@style/CalcButtonLightTheme.ButtonEqual"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/pacifico"
             android:text="@string/button_equal"
-            android:textColor="@color/black"
-            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
