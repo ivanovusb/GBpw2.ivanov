@@ -1,12 +1,25 @@
-package com.example.gbpw2ivanov;
+package com.example.gbpw2ivanov.ui;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.gbpw2ivanov.Calculation;
+import com.example.gbpw2ivanov.R;
+import com.example.gbpw2ivanov.SomeSingleton;
+import com.example.gbpw2ivanov.storage.Theme;
+import com.example.gbpw2ivanov.storage.ThemeStorage;
 
 import org.w3c.dom.Text;
 
@@ -35,7 +48,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        ThemeStorage storage = ThemeStorage.getInstance(getApplicationContext());
+        Theme savedTheme = storage.getTheme();
+
+        ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent data = result.getData();
+
+                    Theme chosenTheme = (Theme) data.getSerializableExtra(ThemeSelectionActivity.CHOSEN_THEME);
+
+                    storage.savedTheme(chosenTheme);
+
+                    recreate();
+                }
+            }
+        });
+
+        setTheme(savedTheme.getTheme());
+
+
         setContentView(R.layout.activity_main);
+
+
+        Context context = this;
+        Context appContext = getApplicationContext();
+
+        SomeSingleton.getInstance(appContext);
 
         initialize();
         signsType();
@@ -45,6 +85,14 @@ public class MainActivity extends AppCompatActivity {
             monitor.setText(savedInstanceState.getString(MONITOR));
             monitor2.setText(savedInstanceState.getString(MONITOR_2));
         }
+
+        findViewById(R.id.theme_button).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, ThemeSelectionActivity.class);
+            intent.putExtra(ThemeSelectionActivity.SELECTED_THEME, savedTheme);
+
+            launcher.launch(intent);
+        });
+
     }
 
     private void digitsType() {
@@ -165,4 +213,6 @@ public class MainActivity extends AppCompatActivity {
         monitor2 = findViewById(R.id.monitor_2);
 
     }
+
+
 }

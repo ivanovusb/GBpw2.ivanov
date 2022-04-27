@@ -15,15 +15,11 @@
         <!-- Customize your theme here. -->
 
         <item name="materialButtonStyle">@style/CalcButtonLightTheme</item>
-
     </style>
 
     <style name="Theme.GBpw2ivanov.GBpw2ivanovDark">
         <item name="materialButtonStyle">@style/CalcButtonDarkTheme</item>
     </style>
 
-    <!--
-
-    -->
 </resources>
 
